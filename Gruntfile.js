@@ -88,7 +88,10 @@ module.exports = function(grunt) {
     usemin: {
       html: [
         'dist/**/*.html'
-      ] // usemin:html
+      ], // usemin:html
+      css: [
+        'dist/styles/**/*.css'
+      ] // usemin:css
     }, // usemin
 
     filerev: {
@@ -118,10 +121,12 @@ module.exports = function(grunt) {
     'useminPrepare',
     'concat',
     'cssmin',
+    'filerev:images',
+    'usemin:css',
     'uglify',
     'filerev:styles',
     'filerev:scripts',
-    'usemin'
+    'usemin:html'
   ]);
 
   // デフォルトのタスク
