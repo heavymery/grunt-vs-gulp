@@ -20,6 +20,11 @@ module.exports = function(grunt) {
     
   });
 
+  // プレビュータスク
+  grunt.registerTask('serve', [
+    'connect'
+  ]);
+
   // デフォルトのタスク
   grunt.registerTask('default', function() {
     grunt.log.write('Grunt vs Gulp...').ok();
