@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 
   // 使用するプラグインを一括で読み込み
   require('load-grunt-tasks')(grunt);
+  require('time-grunt')(grunt);
 
   // タスクのオプション設定
   grunt.initConfig({
