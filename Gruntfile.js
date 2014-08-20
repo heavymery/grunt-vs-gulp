@@ -2,20 +2,8 @@
 
 module.exports = function(grunt) {
 
-  // 使用するプラグインを読み込み（プレビュー用）
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-
-  // 使用するプラグインを読み込み（ビルド用）
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-usemin');
-  grunt.loadNpmTasks('grunt-filerev');
-  grunt.loadNpmTasks('grunt-image');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  // 使用するプラグインを一括で読み込み
+  require('load-grunt-tasks')(grunt);
 
   // タスクのオプション設定
   grunt.initConfig({
