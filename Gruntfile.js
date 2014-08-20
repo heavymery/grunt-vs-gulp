@@ -140,13 +140,13 @@ module.exports = function(grunt) {
   });
 
   // プレビュータスク
-  grunt.registerTask('serve', [
+  grunt.registerTask('serve', 'Launch built-in preview server with LiveReload.', [
     'connect:livereload',
     'watch'
   ]);
   
   // ビルドタスク
-  grunt.registerTask('build', [
+  grunt.registerTask('build', 'Build deployable packge. (unify & minify, image optimization, static file revisioning)', [
     'clean:dist',
     'copy:build',
     'image:dist',
