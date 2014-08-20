@@ -13,6 +13,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-usemin');
+  grunt.loadNpmTasks('grunt-filerev');
 
   // タスクのオプション設定
   grunt.initConfig({
@@ -88,7 +89,19 @@ module.exports = function(grunt) {
       html: [
         'dist/**/*.html'
       ] // usemin:html
-    } // usemin
+    }, // usemin
+
+    filerev: {
+      images: {
+        src: 'dist/images/**/*.{png,jpg,gif}'
+      }, // filerev:images
+      styles: {
+        src: 'dist/styles/**/*.css'
+      }, // filerev:styles
+      scripts: {
+        src: 'dist/scripts/**/*.js'
+      } // filerev:scripts
+    } // filerev
 
   });
 
@@ -106,6 +119,8 @@ module.exports = function(grunt) {
     'concat',
     'cssmin',
     'uglify',
+    'filerev:styles',
+    'filerev:scripts',
     'usemin'
   ]);
 
