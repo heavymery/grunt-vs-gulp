@@ -163,8 +163,9 @@ module.exports = function(grunt) {
   ]);
 
   // デフォルトのタスク
-  grunt.registerTask('default', function() {
-    grunt.log.write('Grunt vs Gulp...').ok();
-  });
+  grunt.registerTask('default', 'Buid deployable package and launch preview server.', [
+    'build',
+    'connect:dist'
+  ]);
 
 };
