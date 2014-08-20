@@ -14,6 +14,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-filerev');
+  grunt.loadNpmTasks('grunt-image');
 
   // タスクのオプション設定
   grunt.initConfig({
@@ -104,8 +105,31 @@ module.exports = function(grunt) {
       scripts: {
         src: 'dist/scripts/**/*.js'
       } // filerev:scripts
-    } // filerev
+    }, // filerev
 
+    image: {
+      dist: {
+        options: {
+          pngquant: true,
+          optipng: true,
+          advpng: true,
+          zopflipng: true,
+          pngcrush: true,
+          pngout: true,
+          jpegtran: true,
+          jpegRecompress: true,
+          jpegoptim: true,
+          gifsicle: true,
+          svgo: true
+        },
+        files: [{
+          expand: true,
+          cwd: 'dist/images',
+          src: '**/*.{png,jpg,gif,svg}',
+          dest: 'dist/images',
+        }]
+      } // image:dist
+    } // image
   });
 
   // プレビュータスク
@@ -118,6 +142,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'copy:build',
+    'image:dist',
     'useminPrepare',
     'concat',
     'cssmin',
