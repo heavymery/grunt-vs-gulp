@@ -18,7 +18,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
   
     connect: {
-      server: {
+      livereload: {
         options: {
           port: 9001,
           middleware: function(connect) {
@@ -94,7 +94,7 @@ module.exports = function(grunt) {
 
   // プレビュータスク
   grunt.registerTask('serve', [
-    'connect',
+    'connect:livereload',
     'watch'
   ]);
   
