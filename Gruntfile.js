@@ -28,7 +28,15 @@ module.exports = function(grunt) {
             ]
           }
         }
-      } // connect:server
+      }, // connect:server
+
+      dist: {
+        options: {
+          port: 9001,
+          base: 'dist',
+          keepalive: true
+        }
+      }
     }, // connect
 
     watch: {
