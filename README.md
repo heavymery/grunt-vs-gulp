@@ -6,12 +6,12 @@ Grunt と Gulp で簡単なビルド環境を作って行くリポジトリで�
 
 **Grunt**
 
-1. [getting-started](https://github.com/heavymery/grunt-vs-gulp/tree/grunt/livereload-task) - サンプルの HTML/CSS/JS テンプレートが置いてあります。
-2. [grunt/init-grunt](https://github.com/heavymery/grunt-vs-gulp/tree/grunt/livereload-task) - Grunt の導入からタスク登録まで。
-3. [grunt/preview-task](https://github.com/heavymery/grunt-vs-gulp/tree/grunt/livereload-task) - ローカルサーバーを立ち上げる。
+1. [getting-started](https://github.com/heavymery/grunt-vs-gulp/tree/grunt/getting-started) - サンプルの HTML/CSS/JS テンプレートが置いてあります。
+2. [grunt/init-grunt](https://github.com/heavymery/grunt-vs-gulp/tree/grunt/init-grunt) - Grunt の導入からタスク登録まで。
+3. [grunt/preview-task](https://github.com/heavymery/grunt-vs-gulp/tree/grunt/preview-task) - ローカルサーバーを立ち上げる。
 4. [grunt/livereload-task](https://github.com/heavymery/grunt-vs-gulp/tree/grunt/livereload-task) - LiveReload 機能を導入する。
-5. [grunt/build-task](https://github.com/heavymery/grunt-vs-gulp/tree/grunt/livereload-task) - ビルド！（Unify & Minify, 画像圧縮、ブラウザーキャッシュ対応）
-6. [grunt/optimize-grunt](https://github.com/heavymery/grunt-vs-gulp/tree/grunt/livereload-task) - Grunt タスクをより使うやすく！
+5. [grunt/build-task](https://github.com/heavymery/grunt-vs-gulp/tree/grunt/build-task) - ビルド！（Unify & Minify, 画像圧縮、ブラウザーキャッシュ対応）
+6. [grunt/optimize-grunt](https://github.com/heavymery/grunt-vs-gulp/tree/grunt/optimize-grunt) - Grunt タスクをより使うやすく！
 
 **Gulp**
 
