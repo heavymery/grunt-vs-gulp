@@ -15,6 +15,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-filerev');
   grunt.loadNpmTasks('grunt-image');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
   // タスクのオプション設定
   grunt.initConfig({
@@ -129,7 +130,24 @@ module.exports = function(grunt) {
           dest: 'dist/images',
         }]
       } // image:dist
-    } // image
+    }, // image
+
+    htmlmin: {
+      options: {
+        removeComments: true,
+        collapseWhitespace: true
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'dist',
+          src: [
+            'index.html'
+          ],
+          dest: 'dist'
+        }]
+      } // htmlmin:dist
+    } // htmlmin
   });
 
   // プレビュータスク
@@ -151,7 +169,8 @@ module.exports = function(grunt) {
     'uglify',
     'filerev:styles',
     'filerev:scripts',
-    'usemin:html'
+    'usemin:html',
+    'htmlmin:dist'
   ]);
 
   // デフォルトのタスク
