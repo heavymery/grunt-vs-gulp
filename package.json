@@ -1,0 +1,19 @@
+{
+  "name": "grunt-vs-gulp",
+  "version": "0.0.0",
+  "description": "Grunt と Gulp で簡単なビルド環境を作って行くリポジトリです。",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/heavymery/grunt-vs-gulp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heavymery/grunt-vs-gulp/issues"
+  },
+  "homepage": "https://github.com/heavymery/grunt-vs-gulp"
+}
