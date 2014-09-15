@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/heavymery/grunt-vs-gulp/issues"
   },
-  "homepage": "https://github.com/heavymery/grunt-vs-gulp"
+  "homepage": "https://github.com/heavymery/grunt-vs-gulp",
+  "devDependencies": {
+    "gulp": "^3.8.8"
+  }
 }
