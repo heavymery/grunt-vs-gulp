@@ -28,15 +28,15 @@ Grunt, Gulp を使うには [Node.js](http://nodejs.org/) が必要です。
 Grunt を使うには `grunt-cli` がグローバルでインストールされている必要があります。
 
 ```sh
-$ npm install grunt-cli -g
+$ npm install grunt-cli --global
 ```
 
 ### Gulp
 
-Gulp は `gulp` だけグローバルでインストールすれば良いです。
+Gulp を使うには `gulp` がグローバルでインストールされている必要があります。
 
 ```sh
-$ npm install gulp -g
+$ npm install gulp --global
 ```
 
 ### Node modules
