@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/heavymery/grunt-vs-gulp",
   "devDependencies": {
-    "gulp": "^3.8.8"
+    "gulp": "^3.8.8",
+    "gulp-webserver": "^0.8.1"
   }
 }
