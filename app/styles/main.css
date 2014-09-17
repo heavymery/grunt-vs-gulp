@@ -51,6 +51,16 @@ body {
   padding: 0 10px;
 }
 
+#header .logo:before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 2px 4px -2px 0;
+  background: url('../images/logo-icon.png') no-repeat;
+  background-size: contain;
+}
+
 /* ==================================
    Content
    ================================== */

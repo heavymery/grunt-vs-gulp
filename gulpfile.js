@@ -32,6 +32,10 @@ gulp.task('serve', function() {
   gulp.watch(['./app/scripts/**/*.js'], function() {
     gulp.src('./app/scripts/**/*.js').pipe(connect.reload());
   });
+  
+    gulp.watch(['./app/images/**/*.{png,jpg,gif}'], function() {
+    gulp.src('./app/images/**/*.{png,jpg,gif}').pipe(connect.reload());
+  });
 });
 
 // ビルド結果のプレビュータスク
