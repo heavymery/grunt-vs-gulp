@@ -12,6 +12,7 @@ var minifyHtml = require('gulp-minify-html');
 var minifyCss = require('gulp-minify-css');
 var rev = require('gulp-rev');
 var clean = require('gulp-clean');
+var imageop = require('gulp-image-optimization');
 
 // プレビュータスク
 gulp.task('serve', function() {
@@ -33,7 +34,7 @@ gulp.task('serve', function() {
     gulp.src('./app/scripts/**/*.js').pipe(connect.reload());
   });
   
-    gulp.watch(['./app/images/**/*.{png,jpg,gif}'], function() {
+  gulp.watch(['./app/images/**/*.{png,jpg,gif}'], function() {
     gulp.src('./app/images/**/*.{png,jpg,gif}').pipe(connect.reload());
   });
 });
@@ -49,7 +50,7 @@ gulp.task('serve:dist', function() {
 // ビルドタスク
 gulp.task('build', function() {
   gulp.src('dist/**/*', {read: false}).pipe(clean());
-    
+  
   gulp.src('./app/*.html')
     .pipe(usemin({
       css: [minifyCss(), 'concat', rev()],
@@ -57,9 +58,13 @@ gulp.task('build', function() {
       js: [uglify(), rev()]
     }))
     .pipe(gulp.dest('dist'));
+    
+  gulp.src(['app/images/**/*.png']).pipe(imageop({
+    optimizationLevel: 5,
+    progressive: true,
+    interlaced: true
+  })).pipe(gulp.dest('dist/images'));
 });
 
 // デフォルトタスク
-gulp.task('default', function() {
-  console.log('Grunt vs Gulp...');
-});
+gulp.task('default', ['build', 'serve:dist']);
