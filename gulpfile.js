@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var runSequence = require('run-sequence');
 
 // プレビュータスク用プラグイン
 var connect = require('gulp-connect');
@@ -48,22 +49,31 @@ gulp.task('serve:dist', function() {
 });
 
 // ビルドタスク
-gulp.task('build', function() {
-  gulp.src('dist/**/*', {read: false}).pipe(clean());
-  
+gulp.task('build', function(callback) {
+  runSequence('usemin', 'image-optimize', callback);
+});
+
+gulp.task('build-clean', function() {
+  // TODO: gulp-clean 挙動が怪しい・・・
+  gulp.src('dist/**/*').pipe(clean({force: true}));
+});
+
+gulp.task('usemin', function(callback) {
   gulp.src('./app/*.html')
     .pipe(usemin({
       css: [minifyCss(), 'concat', rev()],
       html: [minifyHtml({empty: true})],
       js: [uglify(), rev()]
     }))
-    .pipe(gulp.dest('dist'));
-    
+    .pipe(gulp.dest('dist')).on('end', callback).on('error', callback);
+});
+
+gulp.task('image-optimize', function(callback) {
   gulp.src(['app/images/**/*.png']).pipe(imageop({
     optimizationLevel: 5,
     progressive: true,
     interlaced: true
-  })).pipe(gulp.dest('dist/images'));
+  })).pipe(gulp.dest('dist/images')).on('end', callback).on('error', callback);
 });
 
 // デフォルトタスク
