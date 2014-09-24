@@ -7,12 +7,12 @@ var runSequence = require('run-sequence');
 var connect = require('gulp-connect');
 
 // ビルドタスク用プラグイン
+var rimraf = require('gulp-rimraf');
 var usemin = require('gulp-usemin');
 var uglify = require('gulp-uglify');
 var minifyHtml = require('gulp-minify-html');
 var minifyCss = require('gulp-minify-css');
 var rev = require('gulp-rev');
-var clean = require('gulp-clean');
 var imageop = require('gulp-image-optimization');
 
 // プレビュータスク
@@ -54,8 +54,7 @@ gulp.task('build', function(callback) {
 });
 
 gulp.task('build-clean', function() {
-  // TODO: gulp-clean 挙動が怪しい・・・
-  gulp.src('dist/**/*').pipe(clean({force: true}));
+  gulp.src('dist/**/*', {read: false}).pipe(rimraf());
 });
 
 gulp.task('usemin', function(callback) {
