@@ -16,7 +16,7 @@ Grunt と Gulp で簡単なビルド環境を作って行くリポジトリで�
 **Gulp**
 
 1. [getting-started](https://github.com/heavymery/grunt-vs-gulp/tree/getting-started) - サンプルの HTML/CSS/JS テンプレートが置いてあります。
-2. [gulp/init-grunt](https://github.com/heavymery/grunt-vs-gulp/tree/gulp/init-grunt) - Grunt の導入からタスク登録まで。
+2. [gulp/init-grunt](https://github.com/heavymery/grunt-vs-gulp/tree/gulp/init-gulp) - Grunt の導入からタスク登録まで。
 3. [gulp/preview-task](https://github.com/heavymery/grunt-vs-gulp/tree/gulp/preview-task) - ローカルサーバーを立ち上げる。
 4. [gulp/livereload-task](https://github.com/heavymery/grunt-vs-gulp/tree/gulp/livereload-task) - LiveReload 機能を導入する。
 5. [gulp/build-task](https://github.com/heavymery/grunt-vs-gulp/tree/gulp/build-task) - ビルド！（Unify & Minify, 画像圧縮、ブラウザーキャッシュ対応）
