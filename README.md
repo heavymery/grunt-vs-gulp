@@ -54,7 +54,7 @@ $ npm install <プラグイン名>
 `--save-dev` オプションを付けるとインストールと同時にバージョン情報が `package.json` に記載されます。
 
 ```sh
-$ npm install <プラグイン名>
+$ npm install <プラグイン名> --save-dev
 ```
 
 `package.json` に記載されているモジュールは `npm` コマンドより一括でインストールできます。
